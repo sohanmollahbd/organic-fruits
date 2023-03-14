@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* General CSS */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
@@ -6,7 +13,6 @@
 *::before,
 *::after {
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -130,7 +136,6 @@ a:hover,
 button:hover {
     -webkit-transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
 }
 
@@ -147,6 +152,8 @@ button:hover {
 .main-btn {
     position: relative;
     color: var(--bg-white);
+    background: -webkit-gradient(linear, left top, right top, from(#0f7404), to(#5cb917));
+    background: -o-linear-gradient(left, #0f7404, #5cb917);
     background: linear-gradient(to right, #0f7404, #5cb917);
     z-index: 1;
     overflow: hidden;
@@ -201,13 +208,31 @@ section {
 .distributors .contact-form {
     background-color: var(--light-color);
     padding: 5rem;
-    box-shadow: 0 0.2rem 1.5rem rgb(0 0 0 / 4%);
+    -webkit-box-shadow: 0 0.2rem 1.5rem rgb(0 0 0 / 4%);
+            box-shadow: 0 0.2rem 1.5rem rgb(0 0 0 / 4%);
 }
 
 .contact .contact-form .form-control:focus,
 .distributors .contact-form .form-control:focus {
     outline: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.contact .contact-form .form-control::-webkit-input-placeholder, .distributors .contact-form .form-control::-webkit-input-placeholder {
+    color: var(--primary-text);
+}
+
+.contact .contact-form .form-control::-moz-placeholder, .distributors .contact-form .form-control::-moz-placeholder {
+    color: var(--primary-text);
+}
+
+.contact .contact-form .form-control:-ms-input-placeholder, .distributors .contact-form .form-control:-ms-input-placeholder {
+    color: var(--primary-text);
+}
+
+.contact .contact-form .form-control::-ms-input-placeholder, .distributors .contact-form .form-control::-ms-input-placeholder {
+    color: var(--primary-text);
 }
 
 .contact .contact-form .form-control::placeholder,
@@ -235,6 +260,7 @@ section {
     left: 0;
     z-index: 2;
 }
+
 .header .navbar {
     background: url(../images/header-bg.png);
     background-repeat: no-repeat;
@@ -271,7 +297,8 @@ section {
 }
 .header .navbar-toggler:focus {
     outline: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .header .header_right span {
@@ -284,6 +311,7 @@ section {
 
 .header .header_right .phone_no {
     color: var(--text-white);
+    font-size: 1.6rem;
 }
 
 .header-scrolled {
@@ -295,6 +323,8 @@ section {
     max-width: 1320px;
     margin: auto;
     z-index: 999;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 }
 
@@ -338,6 +368,8 @@ section {
     background-color: transparent;
     border: 0.15rem solid var(--light-color);
     padding: 8rem 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -355,9 +387,15 @@ section {
     background-color: var(--light-color);
     margin: auto;
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .feature_section .features-box .features-icon img {
     width: 3.7rem;
@@ -399,6 +437,8 @@ section {
     cursor: pointer;
     border: 0.2rem solid var(--light-color);
     padding: 2rem 1rem;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 .landing_product_section .product-card .product-img {
@@ -411,10 +451,14 @@ section {
 .landing_product_section .product-card span {
     font-size: 1.8rem;
     font-weight: 600;
-    transform: uppercase;
+    -webkit-transform: uppercase;
+        -ms-transform: uppercase;
+            transform: uppercase;
     color: var(--secondary-color);
     margin-right: 0.5rem;
     text-decoration: line-through;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 .landing_product_section .product-card .product-detail {
@@ -425,6 +469,8 @@ section {
     text-align: center;
     padding: 5rem 1rem;
     background-color: var(--dark-color);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 .landing_product_section .product-card:hover .product-detail {
@@ -466,7 +512,8 @@ section {
     width: 100%;
     height: 100%;
     border-radius: .635rem 3.125rem;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 .testimonial_section .desc-box {
     padding-left: 2.5rem;
@@ -477,7 +524,8 @@ section {
 .gallery_section img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 /* 08 Footer CSS */
@@ -517,6 +565,7 @@ section {
     padding-left: 1.5rem;
     position: relative;
     -webkit-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
 }
 
@@ -528,7 +577,8 @@ section {
     left: 0.3rem;
     top: 50%;
     -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
 }
 
 .footer_wrapper .link-widget li a:hover {
@@ -548,6 +598,7 @@ section {
     text-align: center;
     border-radius: 100%;
     -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -555,8 +606,11 @@ section {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--text-white);
-    box-shadow: 0 .625rem .9375rem 0 rgb(0 0 0/10%);
-    transform: translateY(-0.1875rem);
+    -webkit-box-shadow: 0 .625rem .9375rem 0 rgb(0 0 0/10%);
+            box-shadow: 0 .625rem .9375rem 0 rgb(0 0 0/10%);
+    -webkit-transform: translateY(-0.1875rem);
+        -ms-transform: translateY(-0.1875rem);
+            transform: translateY(-0.1875rem);
 }
 
 .footer_wrapper .form-control {
@@ -566,7 +620,8 @@ section {
 
 .footer_wrapper .form-control:focus {
     outline: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     border-color: var(--secondary-color);
 }
 
@@ -610,12 +665,14 @@ Contact Page CSS
 .contact_section .contact-form {
     background-color: var(--light-color);
     padding: 5rem;
-    box-shadow: 0 .2rem 1.2rem 0 rgb(0 0 0 / 4%);
+    -webkit-box-shadow: 0 .2rem 1.2rem 0 rgb(0 0 0 / 4%);
+            box-shadow: 0 .2rem 1.2rem 0 rgb(0 0 0 / 4%);
 }
 
 .contact_section .contact-form .form-control:focus {
     outline: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 .contact_section .contact-form textarea {
     min-height: 15rem;
